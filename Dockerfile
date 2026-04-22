@@ -1,4 +1,4 @@
-# Use a Go version compatible with the toolchain declared in go.mod
+# Use an official Golang runtime as a parent image
 FROM golang:1.24.11-alpine AS builder
 
 # Set the working directory to /app
