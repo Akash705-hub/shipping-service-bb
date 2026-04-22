@@ -16,7 +16,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var version = "dev"
+var Version = "dev"
 
 const (
 	AZURE_COSMOS_DB_SQL_API  = "cosmosdbsql"
@@ -97,7 +97,7 @@ func loadConfig() (*Config, error) {
 	}
 
 	if cfg.AppVersion == "" {
-		cfg.AppVersion = version
+		cfg.AppVersion = Version
 	}
 
 	if cfg.MongoCollectionName == "" {
