@@ -16,6 +16,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var version = "dev"
+
 const (
 	AZURE_COSMOS_DB_SQL_API  = "cosmosdbsql"
 	DefaultMongoCollection   = "orders"
@@ -92,6 +94,10 @@ func loadConfig() (*Config, error) {
 		MongoPassword:            os.Getenv("SHIPPING_DB_PASSWORD"),
 		DBPassword:               os.Getenv("SHIPPING_DB_PASSWORD"),
 		AppVersion:               os.Getenv("APP_VERSION"),
+	}
+
+	if cfg.AppVersion == "" {
+		cfg.AppVersion = version
 	}
 
 	if cfg.MongoCollectionName == "" {
